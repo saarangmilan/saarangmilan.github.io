@@ -1,179 +1,456 @@
-<!DOCTYPE html>
-<html lang="pt" ng-app="milan">
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<base href="/">
-	<title>milan</title>
-	<meta name="description" content="Modular AngularJS with Angm-generator" />
-	<meta name="author" content="" />
-	<meta name="keywords" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=yes" />
-	<link rel="shortcut icon" href="app/assets/images/favicon.ico" />
-	<link rel="apple-touch-icon" href="app/assets/images/apple-touch-icon.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="app/assets/images/apple-touch-icon-72x72.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="app/assets/images/apple-touch-icon-114x114.png" />
-	<!-- injector:css -->
-	<link rel="stylesheet" href="/src/bower_components/angular-material-icons/angular-material-icons.css">
-	<link rel="stylesheet" href="/src/bower_components/angular-material/angular-material.css">
-	<!-- endinjector -->
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/saarang_logo.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <style>
-        body, md-content.md-blue-grey-theme {
-            background-color: #eee;
-        }
+	<title>Milan</title>
 
-        md-toolbar:not(.md-hue-1),
-        .md-fab {
-            fill: #fff;
-        }
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-        md-sidenav {
-            fill: #737373;
-        }
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
-        .user-avatar {
-            border-radius: 99%;
-        }
+	<!-- CSS Files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/material-kit.css" rel="stylesheet"/>
 
-        md-toolbar.md-tall {
-            height: 64px;
-            max-height: 64px;
-            min-height: 64px;
-        }
-        code {
-		    color: #4285f4;
-		    -webkit-font-smoothing: auto;
-		    font-weight: 300;
-		    background-color: #F2F2F2;
-		    padding: 10px;
-		}
-		.text-center {
-		    text-align: center!important
-		}
-		ul {
-		    list-style: none
-		}
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link href="assets/css/demo.css" rel="stylesheet" />
+
+	  <style type="text/css">
+    .section{
+    	padding:0px;
+    }
     </style>
 
 </head>
-<body ng-cloak>
 
-<!--Beginning-->
-<div ui-view layout="row" layout-fill></div>
-<!--End-->
+	</div>
+</nav>
+<body class="index-page">
+<!-- Navbar -->
+<nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+	<div class="container">
+        <div class="navbar-header">
+	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+	        	<span class="sr-only">Toggle navigation</span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	    	</button>
+	    	<a href="http://www.saarang.org/2016/main/">
+	        	<div class="logo-container">
+	                <div class="logo">
+	                    <img src="assets/img/saarang_logo.png">
+	                </div>
+				</div>
+	      	</a>
+	    </div>
 
-<!--Templates. Remove then to a better location -->
+	    <div class="collapse navbar-collapse" id="navigation-index">
+	    	<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a target="_blank">
+						About Us
+					</a>
+				</li>
+				<li>
+					<a target="_blank">
+						Partners
+					</a>
+				</li>
+				<li>
+					<a target="_blank">
+						Cities
+					</a>
+				</li>
+				<li>
+					<a target="_blank">
+						Contact Us
+					</a>
+				</li>
 
-<script type="text/ng-template" id="tabDialog.tmpl.html">
-    <md-dialog
-    aria-label="Profile">
-    <form>
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <h2>Profile Settings</h2>
-                <span flex></span>
-                <md-button class="md-icon-button" ng-click="cancel()">
-                    <md-icon aria-label="Close dialog">close</md-icon>
-                </md-button>
-            </div>
-        </md-toolbar>
-        <md-dialog-content style="max-width:800px;max-height:810px; ">
-            <md-tabs md-dynamic-height md-border-bottom>
-                <md-tab label="one">
-                    <md-content class="md-padding">
-                        <h1 class="md-display-2">Tab One</h1>
+				<!-- <li>
+					<a rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+						<i class="fa fa-twitter"></i>
+					</a>
+				</li>
+				<li>
+					<a rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+						<i class="fa fa-facebook-square"></i>
+					</a>
+				</li>
+				<li>
+					<a rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+						<i class="fa fa-instagram"></i>
+					</a>
+				</li> -->
+	    	</ul>
+	    </div>
+	</div>
+</nav>
+<!-- End Navbar -->
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
-                            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales
-                            pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies
-                            mi.</p>
-                    </md-content>
-                </md-tab>
-                <md-tab label="two">
-                    <md-content class="md-padding">
-                        <h1 class="md-display-2">Tab Two</h1>
+<div class="wrapper">
+	<div class="header header-filter" style="background-image: url('assets/img/bg2.jpeg');">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="brand">
+						<h1>Milan</h1>
+						<h3>Some Content goes here</h3>
+					</div>
+				</div>
+			</div>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
-                            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales
-                            pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies
-                            mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum
-                            enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida.
-                            Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a
-                            facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac
-                            lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim
-                            venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit.
-                            Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec
-                            orci posuere, nec luctus mauris semper.</p>
+		</div>
+	</div>
 
-                        <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec
-                            magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis.
-                            Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras
-                            ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit
-                            tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed
-                            nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+	<div class="main main-raised">
+		<div class="section section-basic">
+	    	<div class="container">
+	            <div class="title">
+	                <h2>About Us</h2>
+	            </div>
+	            <div class="row">
+	            	<div class="col-md-12"> 
+	            		<p>Some Data goes here .... some thing like this</p>
+	            	</div>
+	            </div>
+	             <div class="row">
+	            	<div class="col-md-12"> 
+	            		<p>Some Data goes here .... some thing like this</p>
+	            	</div>
+	            </div>
+	             <div class="row">
+	            	<div class="col-md-12"> 
+	            		<p>Some Data goes here .... some thing like this</p>
+	            	</div>
+	            </div>
+	             <div class="row">
+	            	<div class="col-md-12"> 
+	            		<p>Some Data goes here .... some thing like this</p>
+	            	</div>
+	            </div>
+	             <div class="row">
+	            	<div class="col-md-12"> 
+	            		<p>Some Data goes here .... some thing like this</p>
+	            	</div>
+	            </div>
+	             <div class="row">
+	            	<div class="col-md-12"> 
+	            		<p>Some Data goes here .... some thing like this</p>
+	            	</div>
+	            </div>
+	             <div class="row">
+	            	<div class="col-md-12"> 
+	            		<p>Some Data goes here .... some thing like this</p>
+	            	</div>
+	            </div>
 
-                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere
-                            molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit
-                            erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac
-                            est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-                    </md-content>
-                </md-tab>
-                <md-tab label="three">
-                    <md-content class="md-padding">
-                        <h1 class="md-display-2">Tab Three</h1>
+<!-- 
+				<div id="checkRadios">
+				    <div class="row">
+		                <div class="col-sm-3">
+		                    <div class="title">
+		                        <h3>Checkboxes</h3>
+		                    </div>
 
-                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere
-                            molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit
-                            erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac
-                            est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-                    </md-content>
-                </md-tab>
-            </md-tabs>
-        </md-dialog-content>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Unchecked
+								</label>
+							</div>
 
-        <md-dialog-actions layout="row">
-            <span flex></span>
-            <md-button ng-click="answer('not useful')">
-                Not Useful
-            </md-button>
-            <md-button ng-click="answer('useful')" style="margin-right:20px;">
-                Useful
-            </md-button>
-        </md-dialog-actions>
-    </form>
-    </md-dialog>
-</script>
-<!-- End templates -->
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes" checked>
+									Checked
+								</label>
+							</div>
+
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes" disabled>
+									Disabled Unchecked
+								</label>
+							</div>
+
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes" disabled checked>
+									Disabled Checked
+								</label>
+							</div>
+
+		                </div>
+
+		                <div class="col-sm-3">
+		                    <div class="title">
+		                        <h3>Radio Buttons</h3>
+		                    </div>
+
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios">
+									Radio is off
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" checked="true">
+									Radio is on
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadiosDisabled" disabled>
+									Disabled Radio is off
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadiosDisabled" checked="true" disabled>
+									Disabled Radio is on
+								</label>
+							</div>
+		                </div>
+
+						<div class="col-sm-3">
+		                    <div class="title">
+		                        <h3>Toggle Buttons</h3>
+							</div>
+
+							<div class="togglebutton">
+				            	<label>
+				                	<input type="checkbox" checked="">
+									Toggle is on
+				            	</label>
+				            </div>
+
+							<div class="togglebutton">
+				            	<label>
+				                	<input type="checkbox">
+									Toggle is off
+				            	</label>
+				            </div>
+		                </div>
+
+						<div class="col-sm-3">
+							<div class="title">
+		                        <h3>Sliders</h3>
+		                    </div>
+
+							<div id="sliderRegular" class="slider"></div>
+							<div id="sliderDouble" class="slider slider-info"></div>
+						</div>
+
+		            </div>
+		        </div> -->
+	    	</div>
+	    </div>
+	    <!-- Partners -->
+	    <div class="section section-basic">
+	    	<div class="container">
+	    		<div class="title">
+	    			<h2>Partners</h2>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+				<div class="col-md-3" style="padding:10px;text-align:center">
+					<img src="assets/img/logo.png">
+				</div>
+				<div class="col-md-3" style="padding:10px;text-align:center">
+					<img src="assets/img/logo.png">
+				</div>
+				<div class="col-md-3" style="padding:10px;text-align:center">
+					<img src="assets/img/logo.png">
+				</div>
+				<div class="col-md-3" style="padding:10px;text-align:center">
+					<img src="assets/img/logo.png">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3" style="padding:10px;text-align:center">
+					<img src="assets/img/logo.png">
+				</div>
+				<div class="col-md-3" style="padding:10px;text-align:center">
+					<img src="assets/img/logo.png">
+				</div>
+				<div class="col-md-3" style="padding:10px;text-align:center">
+					<img src="assets/img/logo.png">
+				</div>
+				<div class="col-md-3" style="padding:10px;text-align:center">
+					<img src="assets/img/logo.png">
+				</div>
+			</div>
+	    </div>
+	    <!-- Cities -->
+	    <div class="section section-basic">
+	    	<div class="container">
+	    		<div class="title">
+	    			<h2>Cities</h2>
+	    		</div>
+	    		<div class="row">
+					<div class="col-md-3" style="padding:10px;text-align:center">
+						<button class="btn" data-toggle="modal" data-target="#myModal">
+							<img src="assets/img/city.jpg" style="width:100%">
+						</button>
+						<h4>Kolkata</h4>
+					</div>
+					<div class="col-md-3" style="padding:10px;text-align:center">
+						<button class="btn" data-toggle="modal" data-target="#myModal">
+							<img src="assets/img/city.jpg" style="width:100%">
+						</button>
+						<h4>Delhi</h4>
+					</div>
+					<div class="col-md-3" style="padding:10px;text-align:center">
+						<button class="btn" data-toggle="modal" data-target="#myModal">
+							<img src="assets/img/city.jpg" style="width:100%">
+						</button>
+						<h4>Banglore</h4>
+					</div>
+					<div class="col-md-3" style="padding:10px;text-align:center">
+						<button class="btn" data-toggle="modal" data-target="#myModal">
+							<img src="assets/img/city.jpg" style="width:100%">
+						</button>
+						<h4>Ahmedabad</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3" style="padding:10px;text-align:center">
+						<button class="btn" data-toggle="modal" data-target="#myModal">
+							<img src="assets/img/city.jpg" style="width:100%">
+						</button>
+						<h4>Vizag</h4>
+					</div>
+					<div class="col-md-3" style="padding:10px;text-align:center">
+						<button class="btn" data-toggle="modal" data-target="#myModal">
+							<img src="assets/img/city.jpg" style="width:100%">
+						</button>
+						<h4>Pune</h4>
+					</div>
+					<div class="col-md-3" style="padding:10px;text-align:center">
+						<button class="btn" data-toggle="modal" data-target="#myModal">
+							<img src="assets/img/city.jpg" style="width:100%">
+						</button>
+						<h4>Hyderabad</h4>
+					</div>
+					<div class="col-md-3" style="padding:10px;text-align:center">
+						<button class="btn" data-toggle="modal" data-target="#myModal">
+							<img src="assets/img/city.jpg" style="width:100%">
+						</button>
+						<h4>Guwhathi</h4>
+					</div>
+				</div>
+	    	</div>
+
+	    </div>
+	    <!-- Contact Us -->
+	    <div class="section section-basic">
+	    	<div class="container">
+	    		<div class="title">
+	    			<h2>Contact Us</h2>
+	    		</div>
+	    		<div class="row">
+					<div class="col-md-4 col-md-offset-4" style="text-align:center">
+						<span>Rohan Ajith</span><br>
+						<span>9003112082</span><br>
+						<span>rhnajith@saarang.org</span><br>
+					</div>
+				</div>
+	    	</div>
+	    </div>
+
+	</div>
+</div>
+
+<!-- Sart Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<i class="material-icons">clear</i>
+				</button>
+				<h4 class="modal-title">Kolkata</h4>
+			</div>
+			<div class="modal-body">
+				<div class="col-md-12">
+						<!-- Tabs on Plain Card -->
+						<div class="card card-nav-tabs card-plain">
+							<div class="header header-primary">
+								<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+								<div class="nav-tabs-navigation">
+									<div class="nav-tabs-wrapper">
+										<ul class="nav nav-tabs" data-tabs="tabs">
+											<li class="active"><a href="#city" data-toggle="tab">City</a></li>
+											<li><a href="#rules" data-toggle="tab">Rules</a></li>
+											<li><a href="#register" data-toggle="tab">Register</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="content">
+								<div class="tab-content text-center">
+									<div class="tab-pane active" id="city">
+										<p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
+									</div>
+									<div class="tab-pane" id="partners">
+										<p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>
+									</div>
+									<div class="tab-pane" id="rules">
+										<p> I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
+									</div>
+								</div>
+							</div>
+						</div>
 
 
-<!-- injector:js -->
-<script src="/src/bower_components/es5-shim/es5-shim.js"></script>
-<script src="/src/bower_components/json3/lib/json3.min.js"></script>
-<script src="/src/bower_components/angular/angular.js"></script>
-<script src="/src/bower_components/angular-aria/angular-aria.js"></script>
-<script src="/src/bower_components/angular-mocks/angular-mocks.js"></script>
-<script src="/src/bower_components/angular-cookies/angular-cookies.js"></script>
-<script src="/src/bower_components/angular-animate/angular-animate.js"></script>
-<script src="/src/bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="/src/bower_components/angular-resource/angular-resource.js"></script>
-<script src="/src/bower_components/angular-material-icons/angular-material-icons.min.js"></script>
-<script src="/src/bower_components/angular-messages/angular-messages.js"></script>
-<script src="/src/bower_components/angular-material/angular-material.js"></script>
-<script src="/src/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="/app/app.js"></script>
-<script src="/app/app.config.js"></script>
-<script src="/app/modules/home/homeModule.js"></script>
-<script src="/app/modules/home/homeRoute.js"></script>
-<script src="/app/modules/home/homeCtrl.js"></script>
-<script src="/app/modules/layouts/main-page/mainPageCtrl.js"></script>
-<script src="/app/modules/layouts/side-nav/sidenavCtrl.js"></script>
-<script src="/app/modules/home/homeService.js"></script>
-<script src="/app/modules/layouts/side-nav/sidenavService.js"></script>
-<!-- endinjector -->
+			</div>
+			<div class="modal-footer">
+				<!-- <button type="button" class="btn btn-default btn-simple">Nice Button</button> -->
+				<!-- <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button> -->
+			</div>
+		</div>
+	</div>
+</div>
+<!--  End Modal -->
 
 
 </body>
+	<!--   Core JS Files   -->
+	<script src="assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/material.min.js"></script>
+
+	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+	<script src="assets/js/nouislider.min.js" type="text/javascript"></script>
+
+	<!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
+	<script src="assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
+
+	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
+	<script src="assets/js/material-kit.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+		$().ready(function(){
+			// the body of this function is in assets/material-kit.js
+			materialKit.initSliders();
+            window_width = $(window).width();
+
+            if (window_width >= 992){
+                big_image = $('.wrapper > .header');
+
+				$(window).on('scroll', materialKitDemo.checkScrollForParallax);
+			}
+
+		});
+	</script>
 </html>
